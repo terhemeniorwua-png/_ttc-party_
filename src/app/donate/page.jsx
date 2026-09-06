@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { CreditCard, Landmark, ShieldCheck, Heart } from "lucide-react";
-import { addItem } from "@/lib/storage";
+// import { addItem } from "@/lib/storage";
 import Modal from "@/components/ui/Modal";
 
 export default function DonatePage() {
@@ -40,7 +40,7 @@ export default function DonatePage() {
       status: "Simulated Success"
     };
 
-    addItem("ttc_donations", newDonation);
+    // addItem("ttc_donations", newDonation);
 
     setModalDetails({
       title: "Demo Contribution Recorded",

@@ -41,7 +41,7 @@ export default function CivicAcademyPage() {
         {/* Course Grid */}
         <h2 className="font-heading font-bold text-2xl text-navy mb-6">Available Modules</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {courses.map((course) => {
+          {courses?.map((course) => {
             const courseProgress = course.progress || 0;
             return (
               <div

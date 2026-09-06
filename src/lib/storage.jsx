@@ -10,13 +10,13 @@ return null;
 try {
 const item = localStorage.getItem(key);
 
-```
+
 if (!item) {
   return null;
 }
 
 return JSON.parse(item);
-```
+
 
 } catch (error) {
 console.error(`Error reading ${key} from localStorage:`, error);

@@ -29,7 +29,7 @@ export default function TransparencyPage() {
   }, []);
 
   // Calculate live statistics
-  const totalRaised = donations.reduce((sum, d) => sum + (Number(d.amount) || 0), 12500000); // Default base offset
+  const totalRaised = donations?.reduce((sum, d) => sum + (Number(d.amount) || 0), 12500000); // Default base offset
   const TotalAllocated = 9800000;
   const reserveFund = totalRaised - TotalAllocated;
 
