@@ -1,36 +1,105 @@
-import { initialData } from "./seedData";
+"use client";
+
+const isBrowser = typeof window !== "undefined";
 
 export const getStorageItem = (key) => {
-  if (typeof window === "undefined") return [];
-  const data = localStorage.getItem(key);
-  if (!data) {
-    if (initialData[key.replace("ttc_", "")]) {
-      const seed = initialData[key.replace("ttc_", "")];
-      localStorage.setItem(key, JSON.stringify(seed));
-      return seed;
-    }
-    return [];
-  }
-  return JSON.parse(data);
+if (!isBrowser) {
+return null;
+}
+
+try {
+const item = localStorage.getItem(key);
+
+```
+if (!item) {
+  return null;
+}
+
+return JSON.parse(item);
+```
+
+} catch (error) {
+console.error(`Error reading ${key} from localStorage:`, error);
+return null;
+}
 };
 
 export const setStorageItem = (key, value) => {
-  if (typeof window !== "undefined") {
-    localStorage.setItem(key, JSON.stringify(value));
-    window.dispatchEvent(new Event("storage_updated"));
-  }
+if (!isBrowser) {
+return false;
+}
+
+try {
+localStorage.setItem(key, JSON.stringify(value));
+return true;
+} catch (error) {
+console.error(`Error saving ${key} to localStorage:`, error);
+return false;
+}
 };
 
-export const addItem = (key, item) => {
-  const current = getStorageItem(key);
-  const updated = [item, ...current];
-  setStorageItem(key, updated);
-  return updated;
+export const saveSubscriber = (subscriber) => {
+const subscribers = getStorageItem("ttc_subscribers") || [];
+
+const newSubscriber = {
+id: Date.now(),
+...subscriber,
+subscribedAt:
+subscriber.subscribedAt || new Date().toISOString(),
 };
 
-export const removeItem = (key, id) => {
-  const current = getStorageItem(key);
-  const updated = current.filter((i) => i.id !== id);
-  setStorageItem(key, updated);
-  return updated;
+const updatedSubscribers = [...subscribers, newSubscriber];
+
+setStorageItem("ttc_subscribers", updatedSubscribers);
+
+return newSubscriber;
+};
+
+export const saveVolunteer = (volunteer) => {
+const volunteers = getStorageItem("ttc_volunteers") || [];
+
+const newVolunteer = {
+id: Date.now(),
+...volunteer,
+registeredAt:
+volunteer.registeredAt || new Date().toISOString(),
+};
+
+const updatedVolunteers = [...volunteers, newVolunteer];
+
+setStorageItem("ttc_volunteers", updatedVolunteers);
+
+return newVolunteer;
+};
+
+export const getSubscribers = () => {
+return getStorageItem("ttc_subscribers") || [];
+};
+
+export const getVolunteers = () => {
+return getStorageItem("ttc_volunteers") || [];
+};
+
+export const deleteSubscriber = (id) => {
+const subscribers = getSubscribers();
+
+const updatedSubscribers = subscribers.filter(
+(subscriber) => subscriber.id !== id
+);
+
+setStorageItem("ttc_subscribers", updatedSubscribers);
+
+return updatedSubscribers;
+};
+
+export const deleteVolunteer = (id) => {
+const volunteers = getVolunteers();
+
+const updatedVolunteers = volunteers.filter(
+(volunteer) => volunteer.id !== id
+);
+
+setStorageItem("ttc_volunteers", updatedVolunteers);
+
+return updatedVolunteers;
 };
