@@ -1,20 +1,18 @@
 "use client";
 
-import DonateHero from "@/components/donate/DonateHero";
-import DonateForm from "@/components/donate/DonateForm";
+import GetInvolvedHero from "@/components/get-involved/GetInvolvedHero";
+import GetInvolvedGrid from "@/components/get-involved/GetInvolvedGrid";
 import JoinCTASection from "@/components/home/JoinCTASection";
 import Footer from "@/components/ui/Footer";
 
-export default function DonatePage() {
+export default function GetInvolvedPage() {
   return (
     <main className="min-h-screen bg-white font-body">
       {/* 1. Hero */}
-      <DonateHero />
+      <GetInvolvedHero />
 
-      {/* 2. Form & Simulation Handler */}
-      <section className="py-16 md:py-20 px-6 bg-gray-soft/30">
-        <DonateForm />
-      </section>
+      {/* 2. Get Involved Action Cards Grid */}
+      <GetInvolvedGrid />
 
       {/* 3. Join CTA */}
       <JoinCTASection />
