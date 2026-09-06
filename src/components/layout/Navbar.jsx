@@ -66,7 +66,7 @@ export default function Navbar() {
             TTC — Trust & Transformation Coalition
           </div>
           <div className="hidden sm:flex gap-4 font-normal">
-            <Link href="/civic-academy" className="hover:text-gold-warm transition">
+            <Link href="/academy" className="hover:text-gold-warm transition">
               Civic Academy
             </Link>
             <Link href="/transparency" className="hover:text-gold-warm transition">
@@ -114,7 +114,7 @@ export default function Navbar() {
             <Link href="/events" className="hover:text-blue-trust transition">
               Events
             </Link>
-            <Link href="/civic-academy" className="hover:text-blue-trust transition">
+            <Link href="/academy" className="hover:text-blue-trust transition">
               Civic Academy
             </Link>
           </div>
@@ -192,7 +192,7 @@ export default function Navbar() {
                   Events
                 </Link>
                 <Link
-                  href="/civic-academy"
+                  href="/academy"
                   onClick={() => setMobileMenuOpen(false)}
                   className="hover:text-blue-trust transition"
                 >

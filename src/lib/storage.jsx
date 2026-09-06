@@ -103,3 +103,62 @@ setStorageItem("ttc_volunteers", updatedVolunteers);
 
 return updatedVolunteers;
 };
+
+
+export const getCompletedCourses = () => {
+  if (!isBrowser) return [];
+
+  try {
+    const stored = localStorage.getItem("ttc_completed_courses");
+    return stored ? JSON.parse(stored) : [];
+  } catch (error) {
+    console.error("Failed to get completed courses:", error);
+    return [];
+  }
+};
+
+export const toggleCourseCompletion = (courseId) => {
+  if (!isBrowser) return [];
+
+  try {
+    const completedCourses = getCompletedCourses();
+
+    const isCompleted = completedCourses.includes(courseId);
+
+    const updatedCourses = isCompleted
+      ? completedCourses.filter((id) => id !== courseId)
+      : [...completedCourses, courseId];
+
+    localStorage.setItem(
+      "ttc_completed_courses",
+      JSON.stringify(updatedCourses)
+    );
+
+    return updatedCourses;
+  } catch (error) {
+    console.error("Failed to toggle course completion:", error);
+    return [];
+  }
+};
+
+
+
+
+export const addItem = (key, item) => {
+  if (!isBrowser) return [];
+
+  try {
+    const existingItems = JSON.parse(
+      localStorage.getItem(key) || "[]"
+    );
+
+    const updatedItems = [...existingItems, item];
+
+    localStorage.setItem(key, JSON.stringify(updatedItems));
+
+    return updatedItems;
+  } catch (error) {
+    console.error(`Failed to add item to ${key}:`, error);
+    return [];
+  }
+};

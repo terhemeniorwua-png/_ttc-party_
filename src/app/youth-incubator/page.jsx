@@ -11,7 +11,7 @@ import {
   ChevronRight, 
   Clock 
 } from "lucide-react";
-import { getStorageItem } from "@/lib/storage";
+import { getStorageItem, addItem } from "@/lib/storage";
 import Modal from "@/components/ui/Modal";
 
 export default function YouthIncubatorPage() {

@@ -53,7 +53,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/media-center" className="hover:text-green-transform transition">
+                <Link href="/news" className="hover:text-green-transform transition">
                   News
                 </Link>
               </li>
