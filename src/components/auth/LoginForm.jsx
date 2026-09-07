@@ -67,7 +67,12 @@ export default function LoginForm() {
         </div>
         <h1 className="font-heading font-extrabold text-2xl text-navy">
           Welcome Back
+
+
+          <Link href='/admin-login' className="text-blue-600 text-[15px] font-light">Admin</Link>
         </h1>
+
+
         <p className="text-xs text-gray-mutedText">
           Sign in to access your Civic Academy dashboard and saved progress.
         </p>

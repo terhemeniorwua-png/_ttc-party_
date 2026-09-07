@@ -61,7 +61,7 @@ export default function NewsSection() {
           </div>
 
           <Link
-            href="/media-center"
+            href="/media"
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-navy text-white text-xs font-bold rounded-xl hover:bg-blue-trust transition duration-200 shrink-0 self-start md:self-auto shadow-sm"
           >
             Visit Media Center <ArrowRight className="w-3.5 h-3.5 text-gold-warm" />

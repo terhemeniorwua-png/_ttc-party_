@@ -14,7 +14,7 @@ export default function MyLearningSection({ coursesProgress = [] }) {
           </h2>
         </div>
         <Link
-          href="/civic-academy"
+          href="/acedemy"
           className="text-xs font-bold text-navy hover:text-green-transform transition flex items-center gap-1"
         >
           View All Courses

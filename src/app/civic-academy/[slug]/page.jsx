@@ -4,7 +4,7 @@ import { useState } from "react";
 import AcademyHero from "@/components/civic-academy/AcademyHero";
 import CourseList from "@/components/civic-academy/CourseList";
 import JoinCTASection from "@/components/home/JoinCTASection";
-import Footer from "@/components/ui/Footer";
+// import Footer from "@/components/ui/Footer";
 
 export default function CivicAcademyPage() {
   const [completedCount, setCompletedCount] = useState(0);

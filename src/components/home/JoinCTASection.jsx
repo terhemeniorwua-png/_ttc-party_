@@ -30,7 +30,7 @@ export default function JoinCTASection() {
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto">
           {/* Button 1: Become a Member */}
           <Link
-            href="/join"
+            href="/register"
             className="w-full sm:w-auto px-7 py-4 bg-green-transform text-navy font-heading font-extrabold text-xs uppercase tracking-wider rounded-xl hover:bg-white transition duration-300 shadow-lg flex items-center justify-center gap-2 group"
           >
             <UserPlus className="w-4 h-4" />

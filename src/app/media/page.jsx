@@ -3,7 +3,7 @@
 import MediaHero from "@/components/media/MediaHero";
 import MediaTabs from "@/components/media/MediaTabs";
 import JoinCTASection from "@/components/home/JoinCTASection";
-import Footer from "@/components/ui/Footer";
+// import Footer from "@/components/ui/Footer";
 
 export default function MediaPage() {
   return (

@@ -16,7 +16,7 @@ import NewsSection from "@/components/home/NewsSection";
 import EventsSection from "@/components/home/EventsSection";
 import JoinCTASection from "@/components/home/JoinCTASection";
 import CTASection from "@/components/home/CTASection";
-import Footer from "@/components/ui/Footer";
+// import Footer from "@/components/ui/Footer";
 
 export default function HomePage() {
   const [demoModalOpen, setDemoModalOpen] = useState(false);

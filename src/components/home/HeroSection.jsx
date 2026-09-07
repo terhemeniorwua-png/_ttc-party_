@@ -60,7 +60,7 @@ export default function PageHero({
         <div className="flex flex-wrap items-center gap-4 pt-2">
           {primaryCta && (
             <Link
-              href={primaryCta.href}
+              href='/academy'
               className="animate-btn-stagger-1 px-6 py-3.5 bg-green-transform text-navy font-heading font-bold text-xs uppercase tracking-wider rounded-2xl hover:bg-white hover:text-navy transition shadow-lg flex items-center gap-2 group"
             >
               <span>{primaryCta.label}</span>
